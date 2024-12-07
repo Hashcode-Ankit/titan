@@ -8,11 +8,11 @@ A very simple project managent tool built with Django & Bulma.io.
 
 Here are some screenshots:
 
-![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/epic.png)
+![](https://github.com/Hashcode-Ankit/titan/blob/master/titan/static/screenshots/epic.png?raw=true)
 
-![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/sprint.png)
+![](https://github.com/Hashcode-Ankit/titan/blob/master/titan/static/screenshots/sprint.png?raw=true)
 
-![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/stories.png)
+![](https://github.com/Hashcode-Ankit/titan/blob/master/titan/static/screenshots/stories.png?raw=true)
 
 
 ## Features

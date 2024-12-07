@@ -192,4 +192,5 @@ class WorkspaceUpdateView(WorkspaceBaseView, UpdateView):
 @login_required
 def workspace_index(request):
     default_workspace = request.user.workspace_set.order_by("id").first()
+    print(default_workspace)
     return HttpResponseRedirect(reverse_lazy("stories:story-list", args=[default_workspace.slug]))

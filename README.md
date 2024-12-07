@@ -1,4 +1,4 @@
-# titan
+# Titan (Advanced Mattoral With Fixed Bugs)
 
 ![Python Compatibility](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue.svg) ![Django Compatibility](https://img.shields.io/badge/django-4.0%20%7C%204.1%20%7C%204.2%20%7C%205.0-green.svg)
 
@@ -131,8 +131,3 @@ hatch run local:server
 ## Contributing
 
 Contributions are welcome! ❤️
-
-
-## License
-
-[MPL](https://www.mozilla.org/en-US/MPL/)

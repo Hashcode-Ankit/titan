@@ -1,5 +1,5 @@
 """
-Django settings for matorral project.
+Django settings for titan project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -15,8 +15,8 @@ import environ
 
 from celery.schedules import crontab
 
-ROOT_DIR = environ.Path(__file__) - 2  # (matorral/config/settings/common.py - 2 = matorral/)
-APPS_DIR = ROOT_DIR.path("matorral")
+ROOT_DIR = environ.Path(__file__) - 2  # (titan/config/settings/common.py - 2 = titan/)
+APPS_DIR = ROOT_DIR.path("titan")
 
 env = environ.Env()
 environ.Env.read_env(env_file="config/.env")  # reading .env file
@@ -62,11 +62,11 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    "matorral.users",  # custom users app
+    "titan.users",  # custom users app
     # Your stuff: custom apps go here
-    "matorral.workspaces",
-    "matorral.sprints",
-    "matorral.stories",
+    "titan.workspaces",
+    "titan.sprints",
+    "titan.stories",
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -83,12 +83,12 @@ MIDDLEWARE = (
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "simple_history.middleware.HistoryRequestMiddleware",
-    "matorral.workspaces.middlewares.WorkspaceMiddleware",
+    "titan.workspaces.middlewares.WorkspaceMiddleware",
 )
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
-MIGRATION_MODULES = {"sites": "matorral.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "titan.contrib.sites.migrations"}
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -103,14 +103,14 @@ FIXTURE_DIRS = (str(APPS_DIR.path("fixtures")),)
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = env("DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
-DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="matorral <noreply@localhost>")
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[matorral] ")
+DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="titan <noreply@localhost>")
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[titan] ")
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (("matagus@gmail.com", ""),)
+ADMINS = (("2698ankitsharma@gmail.com", ""),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -119,7 +119,7 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    "default": env.db("DJANGO_DATABASE_URL", default="sqlite:///matorral.db"),
+    "default": env.db("DJANGO_DATABASE_URL", default="sqlite:///titan.db"),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
@@ -177,9 +177,9 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 # Your stuff: custom template context processors go here
-                "matorral.context_processors.site",
-                "matorral.context_processors.navigation",
-                "matorral.context_processors.search",
+                "titan.context_processors.site",
+                "titan.context_processors.navigation",
+                "titan.context_processors.search",
             ],
         },
     },
@@ -226,9 +226,9 @@ AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # cookies
-LANGUAGE_COOKIE_NAME = "matorral-lang"
-CSRF_COOKIE_NAME = "matorral-csrf"
-SESSION_COOKIE_NAME = "matorral-session"
+LANGUAGE_COOKIE_NAME = "titan-lang"
+CSRF_COOKIE_NAME = "titan-csrf"
+SESSION_COOKIE_NAME = "titan-session"
 
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
@@ -238,8 +238,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
-ACCOUNT_ADAPTER = "matorral.users.adapters.AccountAdapter"
-SOCIALACCOUNT_ADAPTER = "matorral.users.adapters.SocialAccountAdapter"
+ACCOUNT_ADAPTER = "titan.users.adapters.AccountAdapter"
+SOCIALACCOUNT_ADAPTER = "titan.users.adapters.SocialAccountAdapter"
 
 # Custom user app defaults
 # Select the correct user model
@@ -251,7 +251,7 @@ LOGIN_URL = "login"
 AUTOSLUG_SLUGIFY_FUNCTION = "slugify.slugify"
 
 # CELERY
-INSTALLED_APPS += ("matorral.taskapp.celery.CeleryConfig",)
+INSTALLED_APPS += ("titan.taskapp.celery.CeleryConfig",)
 BROKER_URL = env("CELERY_BROKER_URL", default="amqp://")
 CELERY_TIMEZONE = "UTC"
 CELERY_ACCEPT_CONTENT = ["msgpack"]
@@ -269,7 +269,7 @@ CELERY_ROUTES = {}
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = re.sub("^/", "^", env("DJANGO_ADMIN_URL", default="^admin/"))
 
-USER_AGENT = env("USER_AGENT", default="matorral/0.1.0")
+USER_AGENT = env("USER_AGENT", default="titan/0.1.0")
 
 WATCHMAN_CHECKS = (
     "watchman.checks.caches",
@@ -302,7 +302,7 @@ LOGGING = {
     "loggers": {
         "django.request": {"handlers": ["console"], "level": "ERROR", "propagate": True},
         "django.security.DisallowedHost": {"level": "ERROR", "handlers": ["console"], "propagate": True},
-        "matorral": {
+        "titan": {
             "handlers": ["console"],
             "level": env("LOGGING_LOGGER_LEVEL", default="ERROR"),
             "formatter": "verbose",
@@ -335,7 +335,7 @@ COMMENTS_XTD_MAX_THREAD_LEVEL = 2
 CELERY_ALWAYS_EAGER = env.bool("CELERY_ALWAYS_EAGER", default=False)
 
 CELERYBEAT_SCHEDULE = {
-    "sprints-update-state": {"task": "matorral.sprints.tasks.update_state", "schedule": crontab(hour="*/1")},
+    "sprints-update-state": {"task": "titan.sprints.tasks.update_state", "schedule": crontab(hour="*/1")},
 }
 
 # Tagulous settings

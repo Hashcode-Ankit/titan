@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "matorral"
+name = "titan"
 dynamic = ["version"]
 description = "A project managent system / Taiga.io clone with a simpler UX built @ Málaga"
 readme = "README.md"
 license = "MPL-2.0"
 authors = [
-    { name = "Matias Agustin Mendez", email = "matagus@gmail.com" },
+    { name = "Matias Agustin Mendez", email = "2698ankitsharma@gmail.com" },
 ]
 keywords = []
 classifiers = [
@@ -49,21 +49,21 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/matagus/matorral"
-Issues = "https://.github.com/matagus/matorral/issues"
-Repository = "https://github.com/matagus/matorral"
-Changelog = "https://githib.com/matagus/matorral/releases"
+Homepage = "https://github.com/Hashcode-Ankit/titan"
+Issues = "https://.github.com/Hashcode-Ankit/titan/issues"
+Repository = "https://github.com/Hashcode-Ankit/titan"
+Changelog = "https://githib.com/Hashcode-Ankit/titan/releases"
 
 [tool.hatch.version]
 path = "config/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = ["."]
-exclude = ["matorral.db"]
+exclude = ["titan.db"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-exclude = ["matorral.db"]
+exclude = ["titan.db"]
 
 [tool.hatch.envs.default]
 extra-dependencies = []
@@ -137,12 +137,12 @@ cov = ["test-cov", "cov-report"]
 
 [tool.ruff]
 line-length = 120
-exclude = ["matorral.db", "static", "config/settings.py"]
+exclude = ["titan.db", "static", "config/settings.py"]
 
 [tool.black]
 line-length = 120
 
 [tool.codespell]
-skip = "matorral.db,matorral/static/js/htmx.min.js"
+skip = "titan.db,titan/static/js/htmx.min.js"
 quiet-level = 3
 write-changes = true

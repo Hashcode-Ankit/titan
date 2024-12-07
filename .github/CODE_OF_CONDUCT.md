@@ -9,6 +9,6 @@ of others no matter what their position is within the project.
 
 ## Reporting
 
-All incidents should be reported by matagus+coc@gmail.com. This email is an alias with the following responders:
+All incidents should be reported by 2698ankitsharma@gmail.com. This email is an alias with the following responders:
 
-* Matias Agustin Mendez (https://github.com/matagus)
+* Matias Agustin Mendez (https://github.com/Hashcode-Ankit)

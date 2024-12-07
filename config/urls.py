@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views import defaults as default_views
 
-from matorral.workspaces.views import workspace_index
+from titan.workspaces.views import workspace_index
 
 
 urlpatterns = [
@@ -13,14 +13,14 @@ urlpatterns = [
     re_path(settings.ADMIN_URL, admin.site.urls),
     # health checks
     re_path(r"^health-check/", include("watchman.urls")),
-    re_path(r"^health/", include("matorral.health_checks.urls")),
+    re_path(r"^health/", include("titan.health_checks.urls")),
     path("login/", auth_views.LoginView.as_view(), name="login"),
     path("logout/", auth_views.LogoutView.as_view(), {"next_page": "/"}, name="logout"),
     # User management
-    re_path(r"^users/", include("matorral.users.urls")),
+    re_path(r"^users/", include("titan.users.urls")),
     # App
-    path(r"<workspace>/", include("matorral.stories.urls", namespace="stories")),
-    path(r"<workspace>/sprints/", include("matorral.sprints.urls", namespace="sprints")),
+    path(r"<workspace>/", include("titan.stories.urls", namespace="stories")),
+    path(r"<workspace>/sprints/", include("titan.sprints.urls", namespace="sprints")),
     path(r"", workspace_index, name="workspace:index"),  # disabled for now, until we finish all the features
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

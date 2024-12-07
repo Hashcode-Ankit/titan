@@ -1,4 +1,4 @@
-# matorral
+# titan
 
 ![Python Compatibility](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue.svg) ![Django Compatibility](https://img.shields.io/badge/django-4.0%20%7C%204.1%20%7C%204.2%20%7C%205.0-green.svg)
 
@@ -8,15 +8,15 @@ A very simple project managent tool built with Django & Bulma.io.
 
 Here are some screenshots:
 
-![](https://github.com/matagus/matorral/raw/main/matorral/static/screenshots/stories-1.png)
+![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/stories-1.png)
 
-![](https://github.com/matagus/matorral/raw/main/matorral/static/screenshots/stories-2.png)
+![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/stories-2.png)
 
-![](https://github.com/matagus/matorral/raw/main/matorral/static/screenshots/stories-4.png)
+![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/stories-4.png)
 
-![](https://github.com/matagus/matorral/raw/main/matorral/static/screenshots/epics-1.png)
+![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/epics-1.png)
 
-![](https://github.com/matagus/matorral/raw/main/matorral/static/screenshots/sprints-1.png)
+![](https://github.com/Hashcode-Ankit/titan/raw/main/titan/static/screenshots/sprints-1.png)
 
 
 ## Features
@@ -58,8 +58,8 @@ There are 2 ways to run the project: using Docker or installing it locally (usin
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:matorral-project/matorral.git
-cd matorral
+git clone git@github.com:titan-project/titan.git
+cd titan
 ```
 
 2. Create the .env file (and customize it if you want):
@@ -90,8 +90,8 @@ in step 3.
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:matorral-project/matorral.git
-cd matorral
+git clone git@github.com:titan-project/titan.git
+cd titan
 ```
 
 2. Install [hatch](https://hatch.pypa.io/latest/) using `pip`:

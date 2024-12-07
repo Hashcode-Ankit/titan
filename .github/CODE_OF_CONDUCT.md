@@ -11,4 +11,4 @@ of others no matter what their position is within the project.
 
 All incidents should be reported by 2698ankitsharma@gmail.com. This email is an alias with the following responders:
 
-* Matias Agustin Mendez (https://github.com/Hashcode-Ankit)
+* Ankit Sharma (https://github.com/Hashcode-Ankit)

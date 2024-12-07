@@ -9,7 +9,7 @@ description = "A project managent system / Taiga.io clone with a simpler UX buil
 readme = "README.md"
 license = "MPL-2.0"
 authors = [
-    { name = "Matias Agustin Mendez", email = "2698ankitsharma@gmail.com" },
+    { name = "Ankit Sharma", email = "2698ankitsharma@gmail.com" },
 ]
 keywords = []
 classifiers = [
